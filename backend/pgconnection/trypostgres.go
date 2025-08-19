@@ -27,7 +27,7 @@ func createSchema() error {
     })
     return err
 }
-
+// Just checking whether SCM polling is working or not
 
 // TryPostgres tests postgres connection, returns boolean and possibly error
 func TryPostgres() (bool, error) {
