@@ -22,11 +22,12 @@ type Message struct {
 
 // createSchema creates database schema for User and Story models.
 func createSchema() error {
-	err := pgdb.Model((*Message)(nil)).CreateTable(&orm.CreateTableOptions{
-		Temp: true,
-	})
-	return err
+    err := pgdb.Model((*Message)(nil)).CreateTable(&orm.CreateTableOptions{
+        IfNotExists: true, // ensures it only creates once
+    })
+    return err
 }
+
 
 // TryPostgres tests postgres connection, returns boolean and possibly error
 func TryPostgres() (bool, error) {
