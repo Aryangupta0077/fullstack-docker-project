@@ -9,7 +9,7 @@ pipeline{
         stage("Hello"){
             steps{
                 script{
-                    hello()
+                    hello() //Updated
                 }
             }
         }
